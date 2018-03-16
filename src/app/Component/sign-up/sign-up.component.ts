@@ -19,9 +19,9 @@ export class SignUpComponent implements OnInit {
   url:string;
   signUpForm:FormGroup;
 
-  constructor(private fb:FormBuilder,private us:UserServiceService,private router:Router) { 
+  constructor(private formBuilder:FormBuilder,private us:UserServiceService,private router:Router) { 
     
-    this.signUpForm = this.fb.group({
+    this.signUpForm = this.formBuilder.group({
 
       fname:'',
       lname:'',

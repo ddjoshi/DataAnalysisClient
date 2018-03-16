@@ -11,7 +11,7 @@ import { AuthenticationService } from '../../_services/index';
 })
 export class LoginComponent implements OnInit {
     ngOnInit(): void {
-        //throw new Error("Method not implemented.");
+  
     }
     
    @Input() user:User;
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   login(){
 
-        this.us1.login('peter@klaven','cityslicka')
+        this.us1.login('peter@klaven','')
             .subscribe(result => {
                 if (result === true) {
                     this.router.navigate(['']);
