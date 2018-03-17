@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
    @Input() user:User;
   url:string;
   loginForm:FormGroup;
-  error:'';
+  error:string='';
+  loading:boolean;
 
   constructor(
       private formBuilder:FormBuilder,
@@ -39,10 +40,10 @@ export class LoginComponent implements OnInit {
             .subscribe(result => {
                 if (result === true) {
                     this.router.navigate(['']);
-                } //else {
-                    //this.error = 'Email or password is incorrect';
-                    //this.loading = false;
-                //}
+                } else {
+                    this.error = 'Email or password is incorrect';
+                    this.loading = false;
+                }
             });
     
   }

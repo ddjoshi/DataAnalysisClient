@@ -8,8 +8,9 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { LoginComponent } from './Component/login/login.component';
 import { AboutusComponent } from './Component/aboutus/aboutus.component';
 import { ContactusComponent } from './Component/contactus/contactus.component';
+import {AuthGuard} from './_guards';
 const routes:Routes = [
-  {path:'',component:DashboardComponent},
+  {path:'',component:DashboardComponent,canActivate: [AuthGuard]},
   {path:'signup',component:SignUpComponent},
   {path:'login',component:LoginComponent},
   {path:'AboutUs',component:AboutusComponent},
