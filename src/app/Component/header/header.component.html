@@ -18,9 +18,23 @@
         </li>
               
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        
-      </ul>
+      <div *ngIf="onCheck(); then logout else login"></div>
+      <ng-template #login>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          
+        </ul>
+      </ng-template>   
+      <ng-template #logout>
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <button type="button" class="btn btn-default btn-sm center" (click)="onLogout()">
+              <span class="glyphicon glyphicon-log-out"></span> Log out
+            </button>
+          </li>
+          
+        </ul>
+      </ng-template>
     </div>
   </nav>
