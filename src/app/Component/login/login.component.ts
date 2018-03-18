@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../../_models/User';
-import { Form,FormControl,FormGroup,FormBuilder,FormArray } from "@angular/forms";
+import { Form,FormControl,FormGroup,FormBuilder,FormArray, Validators } from "@angular/forms";
 import { AppRoutingModule } from "../../app-routing.module";
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../_services/index';
@@ -13,22 +13,22 @@ export class LoginComponent implements OnInit {
     ngOnInit(): void {
   
     }
-    
-   @Input() user:User;
-  url:string;
+ url:string;
   loginForm:FormGroup;
+  //email = new FormControl("");
+  //password = new FormControl("");
   error:string='';
   loading:boolean;
 
   constructor(
       private formBuilder:FormBuilder,
-      private us1:AuthenticationService,
+      private userAuthanticaationService:AuthenticationService,
       private router:Router) { 
     
     this.loginForm = this.formBuilder.group({
 
-      email:'',
-      password:''
+        email:new FormControl(),
+        password:new FormControl()
 
     });
 
@@ -36,7 +36,13 @@ export class LoginComponent implements OnInit {
 
   login(){
 
-        this.us1.login('peter@klaven','')
+
+        // this.email=this.loginForm.get('email').value() as string;
+        // this.password=this.loginForm.get('password').value() as string;
+
+       // console.log(this.loginForm.get("email").value);
+
+        this.userAuthanticaationService.login(this.loginForm.get("email").value,this.loginForm.get("password").value)
             .subscribe(result => {
                 if (result === true) {
                     this.router.navigate(['']);
