@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
   
     }
     
-   @Input() user:User;
   url:string;
   loginForm:FormGroup;
   error:string='';
@@ -22,13 +21,13 @@ export class LoginComponent implements OnInit {
 
   constructor(
       private formBuilder:FormBuilder,
-      private us1:AuthenticationService,
+      private userAuthunticaationService:AuthenticationService,
       private router:Router) { 
     
     this.loginForm = this.formBuilder.group({
 
-      email:'',
-      password:''
+      email:new FormControl(),
+      password:new FormControl()
 
     });
 
@@ -36,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   login(){
 
-        this.us1.login('peter@klaven','')
+        this.userAuthunticaationService.login(this.loginForm.get("email").value,this.loginForm.get("password").value)
             .subscribe(result => {
                 if (result === true) {
                     this.router.navigate(['']);
