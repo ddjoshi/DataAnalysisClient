@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map'
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthenticationService {
@@ -10,7 +11,7 @@ export class AuthenticationService {
     public token: string;
     //private email:string;
 
-    constructor(private http: Http) {
+    constructor(private http: Http,private roter:Router) {
         // set token if saved in local storage
         this.headers = new Headers({ 'Content-Type':'application/json' });
         this.options = new RequestOptions({ headers: this.headers });
@@ -44,5 +45,7 @@ export class AuthenticationService {
         // clear token remove user from local storage to log user out
         this.token = null;
         localStorage.removeItem('currentUser');
+        this.roter.navigate(['login']);
+
     }
 }
