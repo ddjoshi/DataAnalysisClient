@@ -20,7 +20,7 @@ import { ContactusComponent } from './Component/contactus/contactus.component';
 
 import { AuthGuard } from './_guards/index';
 import { AuthInterceptor } from './_services/auth.interceptor';
-
+import { HeaderAfterLoginComponent } from './Component/header-after-login/header-after-login.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { AuthInterceptor } from './_services/auth.interceptor';
     DashboardComponent,
     LoginComponent,
     AboutusComponent,
-    ContactusComponent
-  
+    ContactusComponent,
+    HeaderAfterLoginComponent,
     
   ],
   imports: [

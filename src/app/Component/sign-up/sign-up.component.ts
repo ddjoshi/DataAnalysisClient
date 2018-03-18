@@ -40,7 +40,7 @@ export class SignUpComponent implements OnInit {
     this.us.postData(this.url,this.user).then((response) => { console.log(response); })
         . catch(error =>console.log(error));
   
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
     
   }
 
