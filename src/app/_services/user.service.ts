@@ -3,7 +3,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map'
  
-import { AuthenticationService } from '../_services/index';
+import { AuthenticationService } from '../_services/authentication.service';
 import { User } from '../_models/index';
  
 @Injectable()

@@ -3,7 +3,7 @@ import { User } from '../../_models/User';
 import { Form,FormControl,FormGroup,FormBuilder,FormArray } from "@angular/forms";
 import { AppRoutingModule } from "../../app-routing.module";
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../../_services/index';
+import { AuthenticationService } from '../../_services/authentication.service';
 
 @Component({
     moduleId: module.id,

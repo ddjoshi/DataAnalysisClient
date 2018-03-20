@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../../_services';
+import { AuthenticationService } from '../../_services/authentication.service';
 import { AuthGuard } from '../../_guards';
 
 
@@ -19,8 +19,8 @@ export class HeaderComponent implements OnInit {
       console.log("Header Called constructor");
     }
   ngOnInit() { 
-    
-  
+ 
+ 
   }
   
   onLogout()
@@ -31,10 +31,12 @@ export class HeaderComponent implements OnInit {
   onCheck()
   {
       if (localStorage.getItem('currentUser')) {
-          // logged in so return true
+          
+            var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            this.user = currentUser.email;
+        
           return true;
       }
-  
       
       return false;
     

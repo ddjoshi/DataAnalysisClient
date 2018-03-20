@@ -27,8 +27,18 @@
       </ng-template>   
       <ng-template #logout>
         <ul class="nav navbar-nav navbar-right">
-          
           <li>
+          <div class="dropdown">
+            <button class="dropbtn">Welcome:{{user}}</button>
+            <div class="dropdown-content">
+              <a href="#">Edit Profile</a>
+              <a href="#">Change Password</a>
+              <a href="#"></a>
+            </div>
+          </div>
+        </li>
+            
+          <li style="margin-top:10px;">
             <button type="button" class="btn btn-default btn-sm center" (click)="onLogout()">
               <span class="glyphicon glyphicon-log-out"></span> Log out
             </button>

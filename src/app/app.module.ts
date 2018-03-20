@@ -13,10 +13,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { LoginComponent } from './Component/login/login.component';
 import { AboutusComponent } from './Component/aboutus/aboutus.component';
-import { UserServiceService } from './_services/user-service.service';
-import { UserService,AuthenticationService } from './_services/index';
-import { AppRoutingModule } from './app-routing.module';
 import { ContactusComponent } from './Component/contactus/contactus.component';
+
+import { UserServiceService } from './_services/user-service.service';
+import { StockService } from './_services/stock.service';
+import { AuthenticationService } from './_services/authentication.service';
+import { UserService } from "./_services/user.service";
+import { AppRoutingModule } from './app-routing.module';
+
 
 import { AuthGuard } from './_guards/index';
 import { AuthInterceptor } from './_services/auth.interceptor';
@@ -45,6 +49,7 @@ import { AuthInterceptor } from './_services/auth.interceptor';
   providers: [
     UserServiceService,
     UserService,
+    StockService,
     AuthGuard,
     AuthenticationService,
     {
