@@ -10,7 +10,6 @@ export class ContactusComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 
 }

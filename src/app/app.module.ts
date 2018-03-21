@@ -24,7 +24,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AuthGuard } from './_guards/index';
 import { AuthInterceptor } from './_services/auth.interceptor';
-import { ProfileComponent } from './Component/profile/profile.component';
 
 
 @NgModule({
@@ -37,7 +36,6 @@ import { ProfileComponent } from './Component/profile/profile.component';
     LoginComponent,
     AboutusComponent,
     ContactusComponent,
-    ProfileComponent,
     ],
   imports: [
     HttpModule,
