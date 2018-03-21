@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(private userAuthanticaationService:AuthenticationService,
     private router:Router,public authguard:AuthGuard) { 
      
-      console.log("Header Called constructor");
+      //console.log("Header Calle constructor");
     }
   ngOnInit() { 
  
