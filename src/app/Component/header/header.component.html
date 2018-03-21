@@ -18,7 +18,7 @@
         </li>
               
       </ul>
-      <div *ngIf="onCheck(); then logout else login"></div>
+      <div *ngIf="this.onCheck(); then logout else login"></div>
       <ng-template #login>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
