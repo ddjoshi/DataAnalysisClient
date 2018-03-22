@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../../_models/User';
-import { Form,FormControl,FormGroup,FormBuilder,FormArray } from "@angular/forms";
+import { Form,FormControl,FormGroup,FormBuilder,FormArray,Validators } from "@angular/forms";
 import { UserServiceService } from "../../_services/user-service.service";
 
 import { AppRoutingModule } from "../../app-routing.module";
@@ -23,7 +23,7 @@ export class SignUpComponent implements OnInit {
     
     this.signUpForm = this.formBuilder.group({
 
-      fname:'',
+      fname:['',Validators.required],
       lname:'',
       email:'',
       password:''

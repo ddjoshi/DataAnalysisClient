@@ -1,0 +1,40 @@
+
+<div class="col-md-6 col-md-offset-3">
+  <h2>My Profile</h2>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmitNew()" novalidate>
+
+
+<!-- Hero Detail Controls -->
+<div class="form-group">
+    <label for="First Name">First Name:{{currentUser.fname}}</label>
+      <input type="text" disabled class="form-control" ng-bind="user.lname"   formControlName="fname">
+</div>
+
+
+
+<div class="form-group">
+    <label class="center-block">Last Name:
+      <input type="text" disabled class="form-control" ng-bind="user.lname" formControlName="lname" value={{currentUser}}>
+    </label>
+</div>
+<div class="form-group">
+    <label class="center-block">E-mail:
+      <input type="email" disabled class="form-control" ng-bind="user.email" formControlName="email">
+    </label>
+</div>
+<!--<div class="form-group">
+    <label class="center-block">Password:
+      <input type="password"  class="form-control" ng-bind="user.password" formControlName="password">
+    </label>
+</div>-->
+ <div style="margin-bottom: 1em">
+  <button type="edit" 
+           class="btn btn-success">Edit Profile</button> &nbsp;
+  <!--<button type="reset" (click)="revert()"
+           class="btn btn-danger">Reset</button>-->
+</div>
+</form>
+
+<!--<p>signUpForm value: {{ signUpForm.value | json}}</p>-->
+</div>
+
