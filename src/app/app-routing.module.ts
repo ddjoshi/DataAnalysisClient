@@ -9,6 +9,7 @@ import { LoginComponent } from './Component/login/login.component';
 import { AboutusComponent } from './Component/aboutus/aboutus.component';
 import { ContactusComponent } from './Component/contactus/contactus.component';
 import { ProfileComponent } from './Component/profile/profile.component';
+import { ChangepasswordComponent } from './Component/changepassword/changepassword.component';
 import {AuthGuard} from './_guards';
 const routes:Routes = [
   {path:'',component:DashboardComponent,canActivate: [AuthGuard]},
@@ -17,6 +18,7 @@ const routes:Routes = [
   {path:'AboutUs',component:AboutusComponent},
   {path:'ContactUs',component:ContactusComponent},
   {path:'profile',component:ProfileComponent},
+  {path:'changepassword',component:ChangepasswordComponent}
 ];
 
 @NgModule({
