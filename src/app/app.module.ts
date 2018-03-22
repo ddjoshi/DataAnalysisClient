@@ -14,6 +14,10 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { LoginComponent } from './Component/login/login.component';
 import { AboutusComponent } from './Component/aboutus/aboutus.component';
 import { ContactusComponent } from './Component/contactus/contactus.component';
+import { ProfileComponent } from './Component/profile/profile.component';
+import { ChangepasswordComponent } from './Component/changepassword/changepassword.component';
+import { WatchlistComponent } from './Component/watchlist/watchlist.component';
+import { StockComponent } from "./Component/stock/stock.component";
 
 import { UserServiceService } from './_services/user-service.service';
 import { StockService } from './_services/stock.service';
@@ -21,12 +25,10 @@ import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from "./_services/user.service";
 import { AppRoutingModule } from './app-routing.module';
 
+import { ChartModule } from "angular-highcharts";
 
 import { AuthGuard } from './_guards/index';
 import { AuthInterceptor } from './_services/auth.interceptor';
-import { ProfileComponent } from './Component/profile/profile.component';
-import { ChangepasswordComponent } from './Component/changepassword/changepassword.component';
-import { WatchlistComponent } from './Component/watchlist/watchlist.component';
 
 
 
@@ -43,6 +45,7 @@ import { WatchlistComponent } from './Component/watchlist/watchlist.component';
     ProfileComponent,
     ChangepasswordComponent,
     WatchlistComponent,
+    StockComponent
     ],
   imports: [
     HttpModule,
@@ -51,7 +54,8 @@ import { WatchlistComponent } from './Component/watchlist/watchlist.component';
     ReactiveFormsModule,
     RouterModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartModule
   ],
   providers: [
     UserServiceService,

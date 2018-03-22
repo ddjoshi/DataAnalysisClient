@@ -4,7 +4,6 @@ import {StockService} from '../../_services/stock.service';
 import { Chart } from "chart.js";
 
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -38,12 +37,15 @@ export class DashboardComponent implements OnInit {
                   ticks: {
                       beginAtZero:true
                   }
-              }]
+              }],              
+              xAxes:[{
+                 display:true
+               }]
           }
       }
   });
   this.chart = new Chart('lineChart', {
-    type: 'line',
+    type: 'radar',
     data: {
         labels: ["19 March","20 March","30 March","31 March","32 March","33 March","34 March"],
         datasets: [{
