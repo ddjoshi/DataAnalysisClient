@@ -26,7 +26,7 @@ import { AuthGuard } from './_guards/index';
 import { AuthInterceptor } from './_services/auth.interceptor';
 import { ProfileComponent } from './Component/profile/profile.component';
 import { ChangepasswordComponent } from './Component/changepassword/changepassword.component';
-import { WatchlistComponent } from './watchlist/watchlist.component';
+import { WatchlistComponent } from './Component/watchlist/watchlist.component';
 
 
 
