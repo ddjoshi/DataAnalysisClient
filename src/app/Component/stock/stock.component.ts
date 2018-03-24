@@ -23,9 +23,9 @@ export class StockComponent implements OnInit {
       data: [10,12,11,15,25,21,36,40,22,12,14,12,15,12,14,14,65,23,15,32]
     }]
   });
-add(){
+/*add(){
   this.chart.addPoint(Math.floor(Math.random()*30));
-}
+}*/
   constructor() { }
 
   ngOnInit(){}
