@@ -17,6 +17,7 @@ export class StockService {
     headers.append('Access-Control-Allow-Origin', '*');
     headers.append('Access-Control-Allow-Credentials', 'true');
 
+    
   
     let options = new RequestOptions({ headers: headers });
       return  this._http.get("http://samples.openweathermap.org/2.5/history/city?q=Warren,OH&appid=b6907d289e10d714a6e88b30761fae22")

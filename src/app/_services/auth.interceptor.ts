@@ -9,12 +9,12 @@ export class AuthInterceptor implements HttpInterceptor
               next:HttpHandler):Observable <HttpEvent<any>>{
 
 
-                const token = localStorage.getItem("currentUser");
-
+                var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                var token = currentUser.token;
                 if(token) {
                     const clone = request.clone({
                         headers:request.headers.set("Authorization",
-                        "Bearer "+token)
+                        "Token "+token)
                     });
                     return next.handle(clone);
                 }

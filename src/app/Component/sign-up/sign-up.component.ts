@@ -36,7 +36,7 @@ export class SignUpComponent implements OnInit {
 
     this.user=this.prepareSaveUser();
     console.log(this.user);
-    this.url = 'http://localhost:8080/user/add' ;
+    this.url = 'http://localhost:8080/registerUser' ;
     this.us.postData(this.url,this.user).then((response) => { console.log(response); })
         . catch(error =>console.log(error));
   
@@ -52,8 +52,10 @@ export class SignUpComponent implements OnInit {
 
       fname:this.signUpForm.get('fname').value as string,
       lname:this.signUpForm.get('lname').value as string,
-      email:this.signUpForm.get('email').value as string,
-      password:this.signUpForm.get('password').value as string
+      userName:this.signUpForm.get('email').value as string,
+      password:this.signUpForm.get('password').value as string,
+      active:true,
+      role:"user"
 
     }
     return saveUser;

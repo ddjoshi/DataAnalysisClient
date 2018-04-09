@@ -20,6 +20,7 @@ import { WatchlistComponent } from './Component/watchlist/watchlist.component';
 import { StockComponent } from "./Component/stock/stock.component";
 
 import { UserServiceService } from './_services/user-service.service';
+import { ForgotService } from './_services/forgot.service';
 import { StockService } from './_services/stock.service';
 import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from "./_services/user.service";
@@ -28,7 +29,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { ChartModule } from "angular-highcharts";
 
 import { AuthGuard } from './_guards/index';
-import { AuthInterceptor } from './_services/auth.interceptor';
+//import { AuthInterceptor } from './_services/auth.interceptor';
+import { ForgotComponent } from './Component/forgot/forgot.component';
+import { ResetComponent } from './Component/reset/reset.component';
+import { BarChartComponent } from './Component/bar-chart/bar-chart.component';
+import { AreachartComponent } from './Component/area-chart/area-chart.component';
+import { LineChartComponent } from './Component/line-chart/line-chart.component';
+import { CandleChartComponent } from './Component/candle-chart/candle-chart.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 
 
@@ -45,7 +53,13 @@ import { AuthInterceptor } from './_services/auth.interceptor';
     ProfileComponent,
     ChangepasswordComponent,
     WatchlistComponent,
-    StockComponent
+    StockComponent,
+    ForgotComponent,
+    ResetComponent,
+    BarChartComponent,
+    AreachartComponent,
+    LineChartComponent,
+    CandleChartComponent
     ],
   imports: [
     HttpModule,
@@ -55,7 +69,8 @@ import { AuthInterceptor } from './_services/auth.interceptor';
     RouterModule,
     BrowserModule,
     AppRoutingModule,
-    ChartModule
+    ChartModule,
+    Ng2GoogleChartsModule
   ],
   providers: [
     UserServiceService,
@@ -63,12 +78,9 @@ import { AuthInterceptor } from './_services/auth.interceptor';
     StockService,
     AuthGuard,
     AuthenticationService,
-    {
-      provide:HTTP_INTERCEPTORS,
-      useClass:AuthInterceptor,
-      multi:true
-    }
+    ForgotService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+ 
 })
 export class AppModule { }

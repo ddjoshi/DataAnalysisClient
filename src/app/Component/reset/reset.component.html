@@ -1,0 +1,24 @@
+
+<div class="col-md-6 col-md-offset-3">
+  <h2>Set New Password</h2>
+  <form [formGroup]="resetForm" (ngSubmit)="resetPassword(resetForm.value)" novalidate>
+
+
+<!-- Hero Detail Controls -->
+<div class="form-group">
+    <label class="center-block">New Password:
+      <input type="password"  class="form-control"  ng-bind="email" formControlName="password">
+    </label>
+</div>
+<!-- <div class="form-group">
+  <label class="center-block">Confirm New Password:
+    <input type="password"  class="form-control"  ng-bind="email" formControlName="confirmPass">
+  </label>
+</div> -->
+ <div style="margin-bottom: 1em">
+  <button type="submit"
+           class="btn btn-success">Set Password</button>
+           <p>resetForm value: {{ resetForm.value | json}}</p>
+</div>
+</form>
+</div>

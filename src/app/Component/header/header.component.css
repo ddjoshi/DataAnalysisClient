@@ -1,7 +1,7 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 /* Dropdown Button */
 .dropbtn {
-    background-color: rgb(122, 153, 240);
+    background-color: rgb(216, 83, 83);
     color: white;
     margin:10px;
     padding:5px;  
@@ -43,5 +43,5 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #5244c9;
+    background-color: rgb(216, 83, 83);
 }

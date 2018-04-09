@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     
   url:string;
   loginForm:FormGroup;
-  error='';
+  error:string='';
   loading:boolean;
 
   constructor(
@@ -35,14 +35,13 @@ export class LoginComponent implements OnInit {
 
   login(){
 
-        this.userAuthunticaationService.login(this.loginForm.get("peter@klaven").value,this.loginForm.get("cityslicka").value)
+        this.userAuthunticaationService.login(this.loginForm.get("email").value,this.loginForm.get("password").value)
             .subscribe(result => {
                 if (result === true) {
                     this.router.navigate(['']);
                 } else {
-                    console.log('Email or password is incorrect');
-                    // this.error = 'Email or password is incorrect';
-                    // this.loading = false;
+                    this.error = 'Email or password is incorrect';
+                    this.loading = false;
                 }
             });
     
